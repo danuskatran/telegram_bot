@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-TOKEN = "506052464:AAFH_JpUloAOURCmKVqgQ_kY8ZZE9qvjifo"
+TOKEN = ""
 
 def callback_minute(bot, update, job_queue):
     bot.send_message(chat_id=update.message.chat_id, text='One message every minute')
@@ -26,7 +26,7 @@ def link_deleter(bot, update):
     #admins = get_admin_ids()
 
     for url in urls:    # for url, admin in urls, admins:
-        if url not in ["https://etherscan.io/address/brickblock-ico.eth", "https://www.brickblock.io/"]: #or admin not in admins:
+        if url not in ["https://insert_your_url.com", "https://www.another_protected_url.com/"]: #or admin not in admins:
              bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
              bot.send_message(chat_id=update.message.chat_id, text="No links are allowed: Warning.")
     return urls
@@ -38,7 +38,7 @@ def address_deleter(bot, update):
     #admins = get_admin_ids()
 
     for address in addresses:
-        if address != '0xC7F4ed68592327Aa2755b320c353B1aF715020DD':
+        if address != '0xC7F4ed68592327Aa2755b320c353B1aF715020xx':
             bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
             bot.send_message(chat_id=update.message.chat_id, text="Warning, do not send your ETH addresses!")
     return addresses
